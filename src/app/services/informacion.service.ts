@@ -24,7 +24,6 @@ export class InformacionService {
 
   public cargar_acercaDe() {
     this.http.get('https://mipaginaweb-48545.firebaseio.com/equipo.json').subscribe(data => {
-      console.log(data.json());
       this.cargada_about = true;
       this.acercaDe = data.json();
     });

@@ -9,7 +9,7 @@ import { InformacionService } from "../../services/informacion.service";
 export class FooterComponent {
   anio = new Date().getFullYear();
 
-  constructor( public _is:InformacionService){
+  constructor(public _is: InformacionService) {
 
   }
 }
