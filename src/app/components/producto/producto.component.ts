@@ -8,12 +8,19 @@ import { ProductosService } from '../../services/productos.service';
   styles: []
 })
 export class ProductoComponent  {
-  producto:any = undefined
+  producto:any = undefined;
+  cod:string=undefined;
 
   constructor(public route:ActivatedRoute, public _ps:ProductosService){
     route.params.subscribe(parametros=>{
-      console.log(parametros);
-      console.log(parametros['id']);
+
+      this.cod=parametros['id'];
+      
+      _ps.cargarProducto(this.cod)
+      .subscribe(res=>{
+        this.producto=res.json();
+        console.log(this.producto);
+      })
     })
 
   }
