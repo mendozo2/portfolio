@@ -13,7 +13,7 @@ export class HeaderComponent {
   }
 
   public buscar_producto(termino:String){
-    console.log(termino);
+    //console.log(termino);
     this.router.navigate(['buscar',termino]);
   }
 }

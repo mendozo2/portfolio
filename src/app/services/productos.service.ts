@@ -6,6 +6,7 @@ export class ProductosService {
 
   productos: any[] = [];
   cargada: boolean = true;
+  productosFiltrados: any[]=[];
 
   constructor(public http: Http) {
     this.cargar_info();
@@ -19,6 +20,18 @@ export class ProductosService {
 
 
   }
+  public buscarProducto(termino:string){
+
+    this.productos.forEach(prod =>{
+      console.log(prod);
+      this.productosFiltrados.push(prod);
+    })
+    return this.productosFiltrados;
+    }
+
+
+
+
 
   public cargar_info() {
 
